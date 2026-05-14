@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #003366;
+  --color-signal-red: #CC0000;
+  --color-glass: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900;
+  }
+}
+
+@layer components {
+  .glass-header {
+    @apply backdrop-blur-md bg-white/70 border-b border-white/20 sticky top-0 z-50;
+  }
+
+  .circuit-bg {
+    background-image: radial-gradient(#003366 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    opacity: 0.05;
+  }
+
+  .btn-primary {
+    @apply bg-navy text-white px-6 py-2 rounded-lg font-medium transition-all hover:bg-navy/90 active:scale-95;
+  }
+
+  .btn-signal {
+    @apply bg-signal-red text-white px-6 py-2 rounded-lg font-medium transition-all hover:bg-signal-red/90 active:scale-95;
+  }
+
+  .card-tech {
+    @apply bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow;
+  }
+}
